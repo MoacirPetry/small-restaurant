@@ -10,6 +10,16 @@ end
 # Devise for auth
 gem 'devise'
 
+# Bootstrap for CSS framework
+gem 'bootstrap', '~> 4.1.3'
+
+# Jquery dependency for Bootstrap
+gem 'jquery-rails'
+
+# Missing packages to work
+gem "autoprefixer-rails"
+gem 'mini_racer'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
