@@ -53,6 +53,14 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # Rspec for tests
+  gem 'rspec-rails', '~> 3.8'
+  # Factory for tests with Rspec
+  gem "factory_bot_rails"
+  # Ffaker for generate faker values
+  gem "ffaker"
+  # Should Matchers for tests with Rspec
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
