@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_with(model: category, local: true) do |form| %>
+      <% if category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+          <% category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <hr>
+      <h4 class="lead text-center">New Category</h4>
+      <hr>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= form.label :name, :class => "sr-only" %>
+          <%= form.text_field :name, id: :category_name, :class => "form-control", :placeholder => "Name" %><br>
+
+          <%= form.label :description, :class => "sr-only" %>
+          <%= form.text_field :description, id: :category_description, :class => "form-control", :placeholder => "Description" %><br>
+
+          <%= form.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
