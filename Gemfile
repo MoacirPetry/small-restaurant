@@ -55,6 +55,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Rspec for tests
   gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
   # Factory for tests with Rspec
   gem "factory_bot_rails"
   # Ffaker for generate faker values

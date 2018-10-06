@@ -7,6 +7,9 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
+# Capybara
+require 'capybara/rails'
+
 # Support for factory_bot
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -54,9 +57,11 @@ RSpec.configure do |config|
 
   # Devise configuration
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 
   # Capybara configuration
   config.include Capybara::DSL
+  config.include Warden::Test::Helpers
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
