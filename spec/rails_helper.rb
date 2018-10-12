@@ -9,6 +9,7 @@ require 'rspec/rails'
 
 # Capybara
 require 'capybara/rails'
+require 'capybara/rspec'
 
 # Support for factory_bot
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
@@ -62,6 +63,11 @@ RSpec.configure do |config|
   # Capybara configuration
   config.include Capybara::DSL
   config.include Warden::Test::Helpers
+
+  # Adjust localhost:300
+  # config.before(:each) do
+  #   @request.host = "localhost:3000"
+  # end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

@@ -60,6 +60,8 @@ group :development, :test do
   gem "factory_bot_rails"
   # Ffaker for generate faker values
   gem "ffaker"
+  # Faker for generate faker values - efective!
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   # Should Matchers for tests with Rspec
   gem 'shoulda-matchers', '~> 3.1'
 end

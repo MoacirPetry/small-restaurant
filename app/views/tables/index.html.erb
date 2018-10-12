@@ -1,0 +1,31 @@
+<h3 class="text-left">List of Tables</h3>
+<hr>
+  <form class="form-inline my-2 my-lg-0">
+    <%= link_to 'New Table', new_table_path, :class => "btn btn-md btn-success", :role => "button" %>
+  </form>
+
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Limit</th>
+      <th colspan="2" style="text-align:center">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tables.each do |table| %>
+      <tr>
+        <td><%= table.id %></td>
+        <td><%= table.status %></td>
+        <td><%= table.limit %></td>
+        <td align="center"><%= link_to 'Edit', edit_table_path(table), :class => "btn btn-md btn-info", :role => "button" %></td>
+        <td align="center"><%= link_to 'Delete', table, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
