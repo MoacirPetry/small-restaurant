@@ -39,9 +39,16 @@
       </div>
     </nav>
 
-    <div class="alert alert-info" role="alert">
-      <%= notice %>
-    </div>
+    <% if notice %>
+      <div id="flash">
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      </div>
+    <script>
+      setTimeout();
+    </script>
+    <% end -%>
 
     <div class="container">
       <%= yield %>
