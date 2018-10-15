@@ -1,10 +1,15 @@
-<h3 class="text-left">List of Tables</h3>
-<hr>
-  <form class="form-inline my-2 my-lg-0">
-    <%= link_to 'New Table', new_table_path, :class => "btn btn-md btn-success", :role => "button" %>
-  </form>
 
 <hr>
+  <form class="form-inline">
+    <div class="form-group">
+      <i class="fas fa-list-ul mb-2 mr-sm-2"></i>
+      <h4 class="text-left mb-2 mr-sm-2">List of Tables</h4>
+    </div>
+    <div class="form-group">
+      <%= link_to 'New Table', new_table_path, :class => "btn btn-md btn-success mb-2 mr-sm-2", :role => "button" %>
+    </div>
+  </form>
+
 <div class="table-responsive">
 <table class="table table-striped">
   <thead>
@@ -12,7 +17,8 @@
       <th>ID</th>
       <th>Status</th>
       <th>Limit</th>
-      <th colspan="2" style="text-align:center">Actions</th>
+      <th><i class="fas fa-edit"></i></th>
+      <th><i class="fas fa-trash-alt"></i></th>
     </tr>
   </thead>
 
@@ -22,8 +28,8 @@
         <td><%= table.id %></td>
         <td><%= table.status %></td>
         <td><%= table.limit %></td>
-        <td align="center"><%= link_to 'Edit', edit_table_path(table), :class => "btn btn-md btn-info", :role => "button" %></td>
-        <td align="center"><%= link_to 'Delete', table, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_table_path(table), :class => "btn btn-md btn-info", :role => "button" %></td>
+        <td><%= link_to 'Delete', table, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

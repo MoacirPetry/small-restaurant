@@ -39,19 +39,21 @@
       </div>
     </nav>
 
-    <% if notice %>
-      <div id="flash">
-        <div class="alert alert-success">
-          <%= flash[:notice] %>
-        </div>
-      </div>
-    <script>
-      setTimeout();
-    </script>
-    <% end -%>
-
     <div class="container">
+
+      <% if notice %>
+        <div id="flash">
+          <div class="alert alert-success">
+            <%= flash[:notice] %>
+          </div>
+        </div>
+      <script>
+        setTimeout();
+      </script>
+      <% end -%>
+
       <%= yield %>
+
     </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>

@@ -20,6 +20,9 @@ gem 'jquery-rails'
 gem "autoprefixer-rails"
 gem 'mini_racer'
 
+# Kaminari for pagination
+gem 'kaminari'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
