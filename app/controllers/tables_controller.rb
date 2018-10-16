@@ -2,7 +2,7 @@ class TablesController < ApplicationController
   before_action :set_table, only: [:edit, :update, :destroy]
 
   def index
-    @tables = Table.all
+    @tables = Table.all.order(:id).page(params[:page])
   end
 
   def new
