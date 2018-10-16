@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'customers/index'
+
   get 'homepage/info'
 
   devise_for :users
