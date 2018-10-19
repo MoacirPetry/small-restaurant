@@ -22,7 +22,7 @@
           <i class="fas fa-utensils"></i>
           <i class="fas fa-home"></i>
         <% end %>
-        <a class="py-2 d-none d-md-inline-block" href="#">Order</a>
+        <%= link_to 'Orders', orders_path, class: "py-2 d-none d-md-inline-block" %>
         <%= link_to 'Tables', tables_path, class: "py-2 d-none d-md-inline-block" %>
         <%= link_to 'Categories', categories_path, class: "py-2 d-none d-md-inline-block" %>
         <%= link_to 'Products', products_path, class: "py-2 d-none d-md-inline-block" %>

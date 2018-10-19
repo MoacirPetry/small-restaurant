@@ -1,4 +1,8 @@
 class Table < ApplicationRecord
+
+  # Associations
+  has_many :orders, dependent: :destroy
+
   # Validates
   validates :limit, presence: true
   validates :status, inclusion: { in: [false] }

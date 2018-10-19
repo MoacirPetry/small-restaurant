@@ -1,0 +1,63 @@
+class OrdersController < ApplicationController
+  before_action :set_order, only: [:edit, :update, :destroy]
+  before_action :set_customer, :set_user, :set_table
+
+  def index
+    @orders = Order.all.order(:id).page(params[:page])
+  end
+
+  def new
+    @order = Order.new()
+  end
+
+  def edit
+  end
+
+  def create
+    @order = Order.create(params_order)
+
+    unless @order.errors.any?
+      redirect_to orders_path, notice: "Order #{@order.id} registered!!"
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @order.update(params_order)
+      redirect_to orders_path, notice: "Order updated!!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @order.destroy
+      redirect_to orders_path, notice: "#{@order.id} deleted!!"
+    else
+      render :index
+    end
+  end
+
+  private
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  def set_customer
+    @customers = Customer.all
+  end
+
+  def set_user
+    @users = User.all
+  end
+
+  def set_table
+    @tables = Table.all
+  end
+
+  def params_order
+    params.require(:order).permit(:status, :total, :customer_id, :user_id, :table_id)
+  end
+end

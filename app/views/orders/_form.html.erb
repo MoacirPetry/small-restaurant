@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_with(model: order, local: true) do |form| %>
+      <% if order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+          <ul>
+          <% order.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <hr>
+      <h4 class="lead text-center">New Order</h4>
+      <hr>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= form.label :status, :class => "sr-only" %>
+          <%= form.check_box :status, id: :order_status, :class => "form-control", :placeholder => "Status" %><br>
+
+          <%= form.label :total, :class => "sr-only" %>
+          <%= form.number_field :total, id: :order_total, :class => "form-control", :placeholder => "Total" %><br>
+
+          <%= form.label :customer_id, :class => "sr-only" %>
+          <%= form.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
+
+          <%= form.label :user_id, :class => "sr-only" %>
+          <%= form.collection_select(:user_id, @users, :id, :email, {prompt: "Select a user"}, {class: "form-control"}) %><br>
+
+          <%= form.label :table_id, :class => "sr-only" %>
+          <%= form.collection_select(:table_id, @tables, :id, :id, {prompt: "Select a table"}, {class: "form-control"}) %><br>
+
+          <%= form.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
