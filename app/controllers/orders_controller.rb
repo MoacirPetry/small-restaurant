@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:edit, :update, :destroy]
-  before_action :set_customer, :set_user, :set_table
+  before_action :set_customer, :set_user, :set_table, :set_product
 
   def index
     @orders = Order.all.order(:id).page(params[:page])
@@ -57,7 +57,11 @@ class OrdersController < ApplicationController
     @tables = Table.all
   end
 
+  def set_product
+    @products = Product.all
+  end
+
   def params_order
-    params.require(:order).permit(:status, :total, :customer_id, :user_id, :table_id)
+    params.require(:order).permit(:status, :total, :customer_id, :user_id, :table_id, order_products_attributes: [:id, :order_id, :product_id, :_destroy, products_attributes: [:id, :name, :_destroy]])
   end
 end
