@@ -1,24 +1,40 @@
-# README
+## :fork_and_knife: Small Restaurant :fork_and_knife:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was created with **Ruby On Rails** framework. If you want to learn and understand more about this Web Application, you can see in the Wiki Page more details. Please, feel free to contact me for improvement, errors, or anything else.
 
-Things you may want to cover:
+## Demo
+See demo:
 
-* Ruby version
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-* System dependencies
+## Dependency gems
 
-* Configuration
+https://github.com/MoacirPetry/small-restaurant/wiki/Gems-Dependencies
 
-* Database creation
+## Stacks of Technologies
 
-* Database initialization
+https://github.com/MoacirPetry/small-restaurant/wiki/List-of-Stacks
 
-* How to run the test suite
+## How to set up the dev environment
 
-* Services (job queues, cache servers, search engines, etc.)
+You need to install all dependencies and after you use the `git clone`, command, there is a necessary running the `bundle install` command.
 
-* Deployment instructions
+## Running tests
 
-* ...
+`docker-compose run web rspec spec/controllers/customers_controller.rb`
+
+## Running with Docker
+
+`docker-compose up`
+
+`docker-compose down`
+
+`docker-compose build`
+
+
+
+## Meta
+
+Moacir Petry – [@moahpetry](https://www.instagram.com/moahpetry/) – [m.petry9@gmail.com](mailto:m.petry9@gmail.com)
+
+
