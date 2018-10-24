@@ -18,6 +18,7 @@
 
       <div class="panel panel-default">
         <div class="panel-body">
+<<<<<<< HEAD
           <%= f.label :status, :class => "sr-only" %>
           <%= f.check_box :status, id: :order_status, :class => "form-control", :placeholder => "Status" %><br>
 
@@ -46,6 +47,24 @@
           <hr>
 
           <%= f.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+=======
+          <%= form.label :status, :class => "sr-only" %>
+          <%= form.check_box :status, id: :order_status, :class => "form-control", :placeholder => "Status" %><br>
+
+          <%= form.label :total, :class => "sr-only" %>
+          <%= form.number_field :total, id: :order_total, :class => "form-control" %><br>
+
+          <%= form.label :customer_id, :class => "sr-only" %>
+          <%= form.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
+
+          <%= form.label :user_id, :class => "sr-only" %>
+          <%= form.collection_select(:user_id, @users, :id, :email, {prompt: "Select a user"}, {class: "form-control"}) %><br>
+
+          <%= form.label :table_id, :class => "sr-only" %>
+          <%= form.collection_select(:table_id, @tables, :id, :id, {prompt: "Select a table"}, {class: "form-control"}) %><br>
+
+          <%= form.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+>>>>>>> order
         </div>
       </div>
 
