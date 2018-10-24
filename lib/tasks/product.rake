@@ -16,11 +16,12 @@ namespace :product do
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				name = Faker::Food.dish
+          price = Faker::Number.decimal(2)
   				description = Faker::Food.description
   				category = Category.all.sample
   				product = "Product #{i} = #{name}"
   				puts "Registering... -> #{product}"
-  				Product.create(name: name, description: description, category: category)
+  				Product.create(name: name, price: price, description: description, category: category)
 			  end
   		else
   			puts "You need inform the quantity of products!"
