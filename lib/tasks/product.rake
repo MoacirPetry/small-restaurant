@@ -19,7 +19,7 @@ namespace :product do
           price = Faker::Number.decimal(2)
   				description = Faker::Food.description
   				category = Category.all.sample
-  				product = "Product #{i} = #{name}"
+  				product = "Product #{i} = #{name} - #{price}"
   				puts "Registering... -> #{product}"
   				Product.create(name: name, price: price, description: description, category: category)
 			  end
