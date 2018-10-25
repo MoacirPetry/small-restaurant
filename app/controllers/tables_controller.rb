@@ -2,7 +2,9 @@ class TablesController < ApplicationController
   before_action :set_table, only: [:edit, :update, :destroy]
 
   def index
-    @tables = Table.all
+    # @tables = Table.all
+    @q = Table.ransack(params[:q])
+    @tables = @q.result.page(params[:page])
   end
 
   def new
