@@ -26,7 +26,7 @@
     <% @tables.each do |table| %>
       <tr>
         <td><%= table.id %></td>
-        <td><%= table.status %></td>
+        <td><%= availability table.status %></td>
         <td><%= table.limit %></td>
         <td><%= link_to 'Edit', edit_table_path(table), :class => "btn btn-md btn-info", :role => "button" %></td>
         <td><%= link_to 'Delete', table, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
