@@ -20,6 +20,7 @@ namespace :order do
           user = User.all.sample
           customer = Customer.all.sample
           table = Table.all.sample
+          Table.find(table.id).update_attribute(:status, true) # Busy Table
   				puts "Registering order... -> #{i}"
   				Order.create(status: status, total: total, user: user, customer: customer, table: table)
 			  end
