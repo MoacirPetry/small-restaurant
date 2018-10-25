@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     @order = Order.create(params_order)
 
     unless @order.errors.any?
+      Table.find(@order.table.id).update_attribute(:status, true)
       redirect_to orders_path, notice: "Order #{@order.id} registered!!"
     else
       render :new
@@ -24,7 +25,8 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(params_order)
+    if @order.update(params_order)  && @order.status == true
+      Table.find(@order.table.id).update_attribute(:status, false)
       redirect_to orders_path, notice: "Order updated!!"
     else
       render :edit
