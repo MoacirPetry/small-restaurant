@@ -2,7 +2,9 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
 
   def index
-    @customers = Customer.all.order(:name).page(params[:page])
+    # @customers = Customer.all.order(:name).page(params[:page])
+    @q = Customer.ransack(params[:q])
+    @customers = @q.result.page(params[:page])
   end
 
   def new
