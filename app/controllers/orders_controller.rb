@@ -3,7 +3,9 @@ class OrdersController < ApplicationController
   before_action :set_customer, :set_user, :set_table, :set_product
 
   def index
-    @orders = Order.all.order(:id).page(params[:page])
+    # @orders = Order.all.order(:id).page(params[:page])
+    @q = Order.ransack(params[:q])
+    @orders = @q.result.includes(:customer, :table).page(params[:page])
   end
 
   def new
