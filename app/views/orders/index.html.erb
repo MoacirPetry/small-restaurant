@@ -27,7 +27,7 @@
       <tr>
         <td><%= order.id %></td>
         <td><%= order.status %></td>
-        <td><%= order.total %></td>
+        <td><%= number_to_currency order.total %></td>
         <td><%= order.customer.name %></td>
         <td><%= link_to 'Edit', edit_order_path(order), :class => "btn btn-md btn-info", :role => "button" %></td>
         <td><%= link_to 'Delete', order, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
