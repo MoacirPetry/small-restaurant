@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:new, :edit, :update]
 
   def index
-    @products = Product.all.order(:name).page(params[:page])
+    # @products = Product.all.order(:name).page(params[:page])
+    @q = Product.ransack(params[:q])
+    @products = @q.result.page(params[:page])
   end
 
   def new
