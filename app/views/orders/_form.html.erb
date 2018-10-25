@@ -22,8 +22,8 @@
           <%= f.label :status, :class => "sr-only" %>
           <%= f.check_box :status, id: :order_status, :class => "form-control", :placeholder => "Status" %><br>
 
-          <%= form.label :total, :class => "sr-only" %>
-          <%= form.number_field :total, id: :order_total, :class => "form-control", , :value => order.total_order %><br>
+          <%= f.label :total, :class => "sr-only" %>
+          <%= f.number_field :total, id: :order_total, :class => "form-control", :value => order.total_order %><br>
 
           <%= f.label :customer_id, :class => "sr-only" %>
           <%= f.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
