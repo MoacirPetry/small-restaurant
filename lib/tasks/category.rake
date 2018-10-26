@@ -2,7 +2,8 @@ namespace :category do
 
   desc "Clean all Categories"
   task clean: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
       Category.delete_all
       puts "Done - Deleted all categories!!"
     else
@@ -12,7 +13,8 @@ namespace :category do
 
   desc "Creating Categories"
   task create: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production? # just for heroku
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				name = FFaker::Lorem.word

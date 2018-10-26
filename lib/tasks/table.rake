@@ -2,7 +2,8 @@ namespace :table do
 
   desc "Clean all Tables"
   task clean: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
       Table.delete_all
       puts "Done - Deleted all tables!!"
     else
@@ -12,7 +13,8 @@ namespace :table do
 
   desc "Creating Tables"
   task create: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				status = Faker::Boolean.boolean(0)

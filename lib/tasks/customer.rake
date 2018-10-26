@@ -2,7 +2,8 @@ namespace :customer do
 
   desc "Clean all Customers"
   task clean: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
       Customer.delete_all
       puts "Done - Deleted all customers!!"
     else
@@ -12,7 +13,8 @@ namespace :customer do
 
   desc "Creating Categories"
   task create: :environment do
-    if Rails.env.development?
+    # if Rails.env.development?
+    if Rails.env.production?
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				name = Faker::Name.name

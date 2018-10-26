@@ -2,7 +2,8 @@ namespace :product do
 
   desc "Clean all Products"
   task clean: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
       Product.delete_all
       puts "Done - Deleted all products!!"
     else
@@ -12,7 +13,8 @@ namespace :product do
 
   desc "Creating Products"
   task create: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				name = Faker::Food.dish

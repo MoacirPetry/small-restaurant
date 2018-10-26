@@ -2,7 +2,8 @@ namespace :order do
 
   desc "Clean all Orders"
   task clean: :environment do
-  	if Rails.env.development?
+  	# if Rails.env.development?
+  	if Rails.env.production?
       Order.delete_all
       puts "Done - Deleted all orders!!"
     else
@@ -12,7 +13,8 @@ namespace :order do
 
   desc "Creating Orders"
   task create: :environment do
-    if Rails.env.development?
+    # if Rails.env.development?
+    if Rails.env.production?
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
   				status = false
