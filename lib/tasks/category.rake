@@ -1,3 +1,4 @@
+require 'faker'
 namespace :category do
 
   desc "Clean all Categories"
