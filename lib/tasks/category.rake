@@ -17,8 +17,8 @@ namespace :category do
   	if Rails.env.production? # just for heroku
   		if (ARGV.size == 2) && (ENV['n'] != "")
 		  	ENV['n'].to_i.times do |i|
-  				name = FFaker::Lorem.word
-  				description = FFaker::Lorem.phrase
+  				name = Faker::Commerce.department
+  				description = Faker::Commerce.department(5)
   				category = "Category #{i} = #{name}"
   				puts "Registering... -> #{category}"
   				Category.create(name: name, description: description)
