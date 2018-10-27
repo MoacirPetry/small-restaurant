@@ -19,11 +19,18 @@
       <div class="panel panel-default">
         <div class="panel-body">
 
-          <%= f.label :status, :class => "sr-only" %>
-          <%= f.check_box :status, id: :order_status, :class => "form-control", :placeholder => "Status" %><br>
+          <% if current_page?(action: :new) %>
+            <%= f.hidden_field :status, id: :order_status, value: false %><br>
+          <% else %>
+            <div class="form-check">
+              <%= f.check_box :status, id: :order_status, class: "form-check-input" %>
+              <%= f.label :status, class: "form-check-label" %>
+              <br><br>
+            </div>
+          <% end %>
 
           <%= f.label :total, :class => "sr-only" %>
-          <%= f.number_field :total, id: :order_total, :class => "form-control", :value => order.total_order %><br>
+          <%= f.number_field :total, id: :order_total, :class => "form-control", :value => order.total_order, readonly: true %><br>
 
           <%= f.label :customer_id, :class => "sr-only" %>
           <%= f.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
@@ -31,8 +38,11 @@
           <%= f.label :user_id, :class => "sr-only" %>
           <%= f.collection_select(:user_id, @users, :id, :email, {prompt: "Select a user"}, {class: "form-control"}) %><br>
 
-          <%= f.label :table_id, :class => "sr-only" %>
-          <%= f.collection_select(:table_id, @tables, :id, :id, {prompt: "Select a table"}, {class: "form-control"}) %><br>
+          <% if current_page?(action: :new) %>
+            <%= render 'tnew', :f => f  %>
+          <% else %>
+            <%= render 'tedit', :f => f %>
+          <% end %>
 
           <hr>
           <h3>Products</h3>

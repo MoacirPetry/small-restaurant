@@ -58,7 +58,8 @@ class OrdersController < ApplicationController
   end
 
   def set_table
-    @tables = Table.all
+    # @tables = Table.all
+    @tab = Table.where(:status => false)
   end
 
   def set_product

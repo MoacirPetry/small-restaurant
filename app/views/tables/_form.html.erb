@@ -19,7 +19,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <%= form.label :status, :class => "sr-only" %>
-          <%= form.text_field :status, id: :table_status, :class => "form-control", :placeholder => "Status" %><br>
+          <%= form.hidden_field :status, id: :table_status, :value => false %><br>
 
           <%= form.label :limit, :class => "sr-only" %>
           <%= form.text_field :limit, id: :table_limit, :class => "form-control", :placeholder => "Limit" %><br>

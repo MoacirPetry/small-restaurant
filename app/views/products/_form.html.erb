@@ -28,7 +28,7 @@
           <%= form.text_field :description, id: :product_description, :class => "form-control", :placeholder => "Description" %><br>
 
           <%= form.label :category, :class => "sr-only" %>
-          <%= form.collection_select(:category_id, @categories, :id, :name, include_blank: false) %>
+          <%= form.collection_select(:category_id, @categories, :id, :name, {prompt: "Select a category"}, {class: "form-control"}) %>
 
           <%= form.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
         </div>
