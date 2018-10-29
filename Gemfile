@@ -29,6 +29,9 @@ gem 'cocoon'
 # Ransack for search
 gem 'ransack'
 
+# Faker for generate faker values - efective!
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
@@ -67,10 +70,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   # Factory for tests with Rspec
   gem "factory_bot_rails"
-  # Ffaker for generate faker values
-  gem "ffaker"
-  # Faker for generate faker values - efective!
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   # Should Matchers for tests with Rspec
   gem 'shoulda-matchers', '~> 3.1'
 end
