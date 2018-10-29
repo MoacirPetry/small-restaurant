@@ -1,66 +1,70 @@
-<div class="row">
-  <div class="col-sm-4">
-    <%= form_with(model: order, local: true) do |f| %>
-      <% if order.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<br>
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <div class="card card-body mb-2">
+      <%= form_with(model: order, local: true) do |f| %>
+        <% if order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-          <ul>
-          <% order.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <hr>
-      <h4 class="lead text-center">New Order</h4>
-      <hr>
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-
-          <% if current_page?(action: :new) %>
-            <%= f.hidden_field :status, id: :order_status, value: false %><br>
-          <% else %>
-            <div class="form-check">
-              <%= f.check_box :status, id: :order_status, class: "form-check-input" %>
-              <%= f.label :status, class: "form-check-label" %>
-              <br><br>
-            </div>
-          <% end %>
-
-          <%= f.label :total, :class => "sr-only" %>
-          <%= f.number_field :total, id: :order_total, :class => "form-control", :value => order.total_order, readonly: true %><br>
-
-          <%= f.label :customer_id, :class => "sr-only" %>
-          <%= f.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
-
-          <%= f.label :user_id, :class => "sr-only" %>
-          <%= f.collection_select(:user_id, @users, :id, :email, {prompt: "Select a user"}, {class: "form-control"}) %><br>
-
-          <% if current_page?(action: :new) %>
-            <%= render 'tnew', :f => f  %>
-          <% else %>
-            <%= render 'tedit', :f => f %>
-          <% end %>
-
-          <hr>
-          <h3>Products</h3>
-          <div id='order_products'>
-            <%= f.fields_for :order_products do |order_product| %>
-              <%= render 'order_product_fields', :f => order_product %>
-            <% end %><br>
-            <div class='links'>
-              <br>
-              <%= link_to_add_association 'Add Product', f, :order_products, :class => "btn btn-light" %>
-            </div>
+            <ul>
+            <% order.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
           </div>
-          <hr>
+        <% end %>
+        <hr>
+        <h4 class="lead text-center">Order</h4>
+        <hr>
 
-          <%= f.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <% if current_page?(action: :new) %>
+              <%= f.hidden_field :status, id: :order_status, value: false %><br>
+            <% else %>
+              <div class="form-check">
+                <%= f.check_box :status, id: :order_status, class: "form-check-input" %>
+                <%= f.label :status, class: "form-check-label" %>
+                <br><br>
+              </div>
+            <% end %>
+
+            <%= f.label :total, :class => "sr-only" %>
+            <%= f.number_field :total, id: :order_total, :class => "form-control", :value => order.total_order, readonly: true %><br>
+
+            <%= f.label :customer_id, :class => "sr-only" %>
+            <%= f.collection_select(:customer_id, @customers, :id, :name, {prompt: "Select a customer"}, {class: "form-control"}) %><br>
+
+            <%= f.label :user_id, :class => "sr-only" %>
+            <%= f.collection_select(:user_id, @users, :id, :email, {prompt: "Select a user"}, {class: "form-control"}) %><br>
+
+            <% if current_page?(action: :new) %>
+              <%= render 'tnew', :f => f  %>
+            <% else %>
+              <%= render 'tedit', :f => f %>
+            <% end %>
+
+            <hr>
+            <h4 class="lead text-center">Products</h4>
+            <hr>
+            <div id='order_products'>
+              <%= f.fields_for :order_products do |order_product| %>
+                <%= render 'order_product_fields', :f => order_product %>
+              <% end %><br>
+              <div class='links'>
+                <br>
+                <%= link_to_add_association 'Add Product', f, :order_products, :class => "btn btn-light" %>
+              </div>
+            </div>
+            <hr>
+
+            <%= f.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+          </div>
         </div>
-      </div>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
