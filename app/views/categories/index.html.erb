@@ -24,8 +24,8 @@
       <th>ID</th>
       <th>Name</th>
       <th>Description</th>
-      <th><i class="fas fa-edit"></i></th>
-      <th><i class="fas fa-trash-alt"></i></th>
+      <th class="text-md-center"><i class="fas fa-edit"></i></th>
+      <th class="text-md-center"><i class="fas fa-trash-alt"></i></th>
     </tr>
   </thead>
 
@@ -35,8 +35,8 @@
         <td><%= category.id %></td>
         <td><%= category.name %></td>
         <td><%= category.description %></td>
-        <td><%= link_to 'Edit', edit_category_path(category), :class => "btn btn-md btn-info", :role => "button" %></td>
-        <td><%= link_to 'Delete', category, :class => "btn btn-md btn-danger", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_category_path(category), :class => "btn btn-md btn-info btn-block", :role => "button" %></td>
+        <td><%= link_to 'Delete', category, :class => "btn btn-md btn-danger btn-block", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
