@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def index
     # @orders = Order.all.order(:id).page(params[:page])
     @q = Order.ransack(params[:q])
-    @orders = @q.result.includes(:customer, :table).page(params[:page])
+    @orders = @q.result.page(params[:page])
   end
 
   def new
@@ -27,9 +27,11 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(params_order)  && @order.status == true
-      Table.find(@order.table.id).update_attribute(:status, false)
-      redirect_to orders_path, notice: "Order updated!!"
+    if @order.update(params_order)
+      if @order.status == true
+        Table.find(@order.table.id).update_attribute(:status, false)
+      end
+      redirect_to orders_path, notice: "Order #{@order.id} updated!!"
     else
       render :edit
     end
