@@ -1,49 +1,62 @@
 <div class="row">
   <div class="col-sm-12 text-xs-center bootstrap-welcome">
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Order</h2>
-          <p class="lead">And an even wittier subheading.</p>
+    <!-- <div class="align-self-center w-100 my-md-3 pl-md-1"> -->
+      <%= link_to orders_path, action: 'index' do %>
+        <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Orders</h2>
+            <p class="lead">Check this one out!</p>
+          </div>
         </div>
-      </div>
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <% end %>
+      <%= link_to tables_path, action: 'index' do %>
+      <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
         <div class="my-3 py-3">
-          <h2 class="display-5">Table</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <h2 class="display-5">Tables</h2>
+          <p class="lead">Looking for free tables? ;)</p>
         </div>
       </div>
+      <% end %>
     </div>
 
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Category</h2>
-          <p class="lead">And an even wittier subheading.</p>
+      <%= link_to categories_path, action: 'index' do %>
+        <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Categories</h2>
+            <p class="lead">See the grouping of products. o/ \o</p>
+          </div>
         </div>
-      </div>
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Product</h2>
-          <p class="lead">And an even wittier subheading.</p>
+      <% end %>
+      <%= link_to products_path, action: 'index' do %>
+        <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">Products</h2>
+            <p class="lead">Searching a specific product?</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Customer</h2>
-          <p class="lead">And an even wittier subheading.</p>
+      <%= link_to customers_path, action: 'index' do %>
+        <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Customers</h2>
+            <p class="lead">Verifying information by customers.</p>
+          </div>
         </div>
-      </div>
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">User</h2>
-          <p class="lead">And an even wittier subheading.</p>
+      <% end %>
+      <%= link_to edit_user_registration_path, action: 'edit' do %>
+        <div class="shadow p-3 mb-5 mr-md-3 bg-white rounded text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">User</h2>
+            <p class="lead">Change password or e-mail. :‑)</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -26,7 +26,7 @@
             <% else %>
               <div class="form-check">
                 <%= f.check_box :status, id: :order_status, class: "form-check-input" %>
-                <%= f.label :status, class: "form-check-label" %>
+                <%= f.label :status, class: "form-check-label", :value => "Finish Order" %>
                 <br><br>
               </div>
             <% end %>
@@ -55,12 +55,12 @@
               <% end %><br>
               <div class='links'>
                 <br>
-                <%= link_to_add_association 'Add Product', f, :order_products, :class => "btn btn-light" %>
+                <%= link_to_add_association 'Add Product', f, :order_products, :class => "btn btn-outline-secondary" %>
               </div>
             </div>
             <hr>
 
-            <%= f.submit "Create", :class => "btn btn-lg btn-default btn-block", :type => "submit" %>
+            <%= f.submit "Apply", :class => "btn btn-outline-success" %>
           </div>
         </div>
 

@@ -1,6 +1,20 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$color: green;
+$none: none;
+
 .bootstrap-welcome {
   padding-top: 2em;
+}
+
+a {
+  color: $color;
+  text-decoration: $none;
+
+  &:hover {
+    color: $color;
+    text-decoration: $none;
+  }
 }
