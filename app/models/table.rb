@@ -1,7 +1,7 @@
 class Table < ApplicationRecord
 
   # Associations
-  has_many :orders, dependent: :destroy
+  has_one :order
 
   # Validates
   validates :limit, presence: true

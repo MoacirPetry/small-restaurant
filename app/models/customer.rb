@@ -1,7 +1,7 @@
 class Customer < ApplicationRecord
 
   # Associations
-  has_many :orders, dependent: :destroy
+  has_one :order
 
   # Validates
   validates :name, :email, :phone_number, presence: true, uniqueness: true
