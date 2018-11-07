@@ -32,7 +32,7 @@
 <h1 class="h3 mb-3 font-weight-normal" align="center">Cancel my account</h1>
 <div class="form-signin">
   <p class="mt-5 mb-3 text-muted" align="center">Unhappy?
-    <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-lg btn-outline-danger btn-block", data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-lg btn-outline-danger btn-block disabled", data: { confirm: "Are you sure?" }, method: :delete %>
   </p>
 </div>
 

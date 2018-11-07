@@ -38,7 +38,7 @@
         <td><%= number_to_currency order.total_order %></td>
         <td><%= order.customer.name %></td>
         <td><%= link_to 'Edit', edit_order_path(order), :class => "btn btn-md btn-info btn-block", :role => "button" %></td>
-        <td><%= link_to 'Delete', order, :class => "btn btn-md btn-danger btn-block", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', order, :class => "btn btn-md btn-danger btn-block disabled", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
