@@ -4,7 +4,9 @@
 This app was created with **Ruby on Rails** framework. If you want to learn and understand more about this Web Application, you can see in the [Wiki Page](https://github.com/MoacirPetry/small-restaurant/wiki) more details. Please, feel free to contact me for improvement, errors, or anything else.
 
 ## Demo
-[![Small Restaurant Demo](https://brand.heroku.com/static/media/heroku-logotype-horizontal.81c49462.svg)](http://afternoon-fortress-82006.herokuapp.com/)
+[![Small Restaurant Demo](https://brand.heroku.com/static/media/heroku-logotype-horizontal.81c49462.svg)](http://small-restaurant.herokuapp.com/)
+
+> **Note:** Use the user **admin@small-restaurant.herokuapp.com** and the password **123456**.
 
 ## Dependency gems
 
