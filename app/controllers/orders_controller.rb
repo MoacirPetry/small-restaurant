@@ -19,7 +19,8 @@ class OrdersController < ApplicationController
     @order = Order.create(params_order)
 
     unless @order.errors.any?
-      Table.find(@order.table.id).update_attribute(:status, true)
+      TableStatusService.change_status_to_true(@order.table.id)
+      # Table.find(@order.table.id).update_attribute(:status, true)
       redirect_to orders_path, notice: "Order #{@order.id} registered!!"
     else
       render :new
@@ -29,7 +30,8 @@ class OrdersController < ApplicationController
   def update
     if @order.update(params_order)
       if @order.status == true
-        Table.find(@order.table.id).update_attribute(:status, false)
+        TableStatusService.change_status_to_false(@order.table.id)
+        # Table.find(@order.table.id).update_attribute(:status, false)
       end
       redirect_to orders_path, notice: "Order #{@order.id} updated!!"
     else
