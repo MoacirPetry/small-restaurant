@@ -32,7 +32,7 @@
             <%= form.label :category, :class => "sr-only" %>
             <%= form.collection_select(:category_id, @categories, :id, :name, {prompt: "Select a category"}, {class: "form-control"}) %><br>
 
-            <%= form.submit "Apply", :class => "btn btn-outline-success" %>
+            <%= render 'shared/button', :form => form %>
           </div>
         </div>
 
