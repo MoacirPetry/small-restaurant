@@ -20,10 +20,10 @@
 
         <div class="panel panel-default">
           <div class="panel-body">
-            <%= form.label :name, :class => "sr-only" %>
+            <%= render 'shared/label_name', :form => form %>
             <%= form.text_field :name, id: :category_name, :class => "form-control", :placeholder => "Name" %><br>
 
-            <%= form.label :description, :class => "sr-only" %>
+            <%= render 'shared/label_description', :form => form %>
             <%= form.text_field :description, id: :category_description, :class => "form-control", :placeholder => "Description" %><br>
 
             <%= render 'shared/button', :form => form %>
