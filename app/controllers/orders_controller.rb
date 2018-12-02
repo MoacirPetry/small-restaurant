@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def index
     # @orders = Order.all.order(:id).page(params[:page])
     @q = Order.ransack(params[:q])
-    @orders = @q.result.page(params[:page])
+    @orders = @q.result.page(params[:page]).includes(:customer, :user, :table)
   end
 
   def new

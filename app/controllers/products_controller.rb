@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all.order(:name).page(params[:page])
     @q = Product.ransack(params[:q])
-    @products = @q.result.page(params[:page])
+    @products = @q.result.page(params[:page]).includes(:category)
   end
 
   def new
