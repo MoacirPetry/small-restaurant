@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :control_panel do
+    resources :users, except: [:show]
+  end
+
+  namespace :control_panel do
+    get 'dashboard/index'
+  end
+
   get 'order/index'
 
   get 'products/index'

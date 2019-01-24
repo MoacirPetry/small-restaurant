@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">List of Users</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <%= link_to 'New User', new_control_panel_user_path, :class => "btn btn-md btn-success", :role => "button" %>
+      <button class="btn btn-sm btn-outline-secondary">Print</button>
+      <button class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Position</th>
+        <th><i class="fas fa-edit"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          <td><%= user.position %></td>
+          <td><%= link_to 'Edit', edit_control_panel_user_path(user), :class => "btn btn-md btn-info", :role => "button" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

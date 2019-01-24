@@ -14,9 +14,9 @@ class Order < ApplicationRecord
   validates :user, :customer, :table, presence: true
 
   # Calculate the total of prices in order
-  def total_order
+  def total_order(order)
     total = products.to_a.sum { |product| product.price }
-    Order.update(total: total)
+    order.update(total: total)
     total
   end
 end

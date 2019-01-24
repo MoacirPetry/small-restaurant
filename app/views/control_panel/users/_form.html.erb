@@ -1,0 +1,22 @@
+<hr>
+
+<%= form_for([:control_panel, @user]) do |f| %>
+  <h1 class="h3 mb-3 font-weight-normal" align="center">Sign in</h1>
+
+  <%= f.label :email, class: "sr-only" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+
+  <%= f.label :password, class: "sr-only" %><br />
+  <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %><br>
+
+  <%= f.label :password_confirmation, class: "sr-only" %>
+  <%= f.password_field :password_confirmation, autocomplete: "password-confirmation", class: "form-control", placeholder: "New Password Confirmation" %><br>
+
+  <%= f.label :position, class: "sr-only" %><br />
+  <%= f.select :position, select_positions %><br /><br />
+
+  <%= f.submit "Update", class: "btn btn-lg btn-outline-secondary" %>
+  <p class="mt-5 mb-3 text-muted" align="center">&copy;2018</p>
+<% end %>
+
+<hr>
