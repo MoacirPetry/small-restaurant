@@ -11,7 +11,7 @@ end
 gem 'devise'
 
 # Bootstrap for CSS framework
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 
 # Jquery dependency for Bootstrap
 gem 'jquery-rails'
