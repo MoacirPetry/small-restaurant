@@ -6,7 +6,7 @@ namespace :customer do
     puts "Done - Deleted all customers!!"
   end
 
-  desc "Creating Categories"
+  desc "Creating Customers"
   task create: :environment do
 		if (ARGV.size == 2) && (ENV['n'] != "")
 	  	ENV['n'].to_i.times do |i|
