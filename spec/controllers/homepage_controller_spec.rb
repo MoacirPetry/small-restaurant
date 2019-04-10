@@ -8,9 +8,12 @@ RSpec.describe HomepageController, type: :controller do
   end
 
   describe "GET #index" do
+    subject { get :index }
     it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+      expect(subject).to have_http_status(:success)
+    end
+    it "returns http success" do
+      expect(subject).to have_http_status(:success)
     end
   end
 
