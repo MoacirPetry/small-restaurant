@@ -8,10 +8,13 @@ RSpec.describe OrdersController, type: :controller do
   end
 
   context "GET #index" do
+    subject { get :index }
   	it "render the index template" do
-  	  get :index
-  	  expect(response).to render_template(:index)
+  	  expect(subject).to render_template(:index)
   	end
+    it "returns http success" do
+      expect(subject).to have_http_status(:success)
+    end
   end
 
   context 'GET #new' do
