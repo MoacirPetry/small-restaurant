@@ -3,34 +3,32 @@ require 'rails_helper'
 RSpec.describe TablesController, type: :controller do
 
   before(:each) do
-    @table = FactoryBot.create(:table)
-    @invalid_table =  FactoryBot.attributes_for(:invalid_table)
     @request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in FactoryBot.create(:user) # Using factory bot as an example
+    @table = FactoryBot.create(:table)
+    @invalid_table =  FactoryBot.attributes_for(:invalid_table)
   end
 
   describe "GET #index" do
     context "with valid attributes" do
+      subject { get :index }
       it "renders the :index view" do
-        get :index
-        expect(response).to render_template(:index)
+        expect(subject).to render_template(:index)
       end
       it "returns http success" do
-        get :index
-        expect(response).to have_http_status(:success)
+        expect(subject).to have_http_status(:success)
       end
     end
   end
 
   describe "GET #new" do
     context "with valid attributes" do
+      subject { get :new }
       it "renders the :new view" do
-        get :new
-        expect(response).to render_template(:new)
+        expect(subject).to render_template(:new)
       end
       it "returns http success" do
-        get :new
-        expect(response).to have_http_status(:success)
+        expect(subject).to have_http_status(:success)
       end
     end
   end
