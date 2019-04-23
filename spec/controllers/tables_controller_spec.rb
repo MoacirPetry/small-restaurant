@@ -10,15 +10,7 @@ RSpec.describe TablesController, type: :controller do
   end
 
   describe "GET #index" do
-    context "with valid attributes" do
-      subject { get :index }
-      it "renders the :index view" do
-        expect(subject).to render_template(:index)
-      end
-      it "returns http success" do
-        expect(subject).to have_http_status(:success)
-      end
-    end
+    include_examples :index_examples
   end
 
   describe "GET #new" do
