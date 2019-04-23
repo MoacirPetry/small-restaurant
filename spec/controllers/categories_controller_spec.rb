@@ -12,10 +12,7 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   context 'GET #new' do
-    it "render the new template" do
-      get :new
-      expect(response).to render_template(:new)
-    end
+    include_examples :new_examples
   end
 
   context 'Checking current_user' do

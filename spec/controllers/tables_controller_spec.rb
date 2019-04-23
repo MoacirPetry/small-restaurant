@@ -13,16 +13,8 @@ RSpec.describe TablesController, type: :controller do
     include_examples :index_examples
   end
 
-  describe "GET #new" do
-    context "with valid attributes" do
-      subject { get :new }
-      it "renders the :new view" do
-        expect(subject).to render_template(:new)
-      end
-      it "returns http success" do
-        expect(subject).to have_http_status(:success)
-      end
-    end
+  context 'GET #new' do
+    include_examples :new_examples
   end
 
   describe "POST #create" do
