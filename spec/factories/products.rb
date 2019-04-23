@@ -4,4 +4,7 @@ FactoryBot.define do
     description { Faker::Food.description }
     category
   end
+  factory :invalid_product, class: Product do
+    name { nil }
+  end
 end
