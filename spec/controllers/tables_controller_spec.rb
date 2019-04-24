@@ -9,6 +9,10 @@ RSpec.describe TablesController, type: :controller do
     @invalid_table =  FactoryBot.attributes_for(:invalid_table)
   end
 
+  context "Check current_user" do
+    include_examples :current_user_examples
+  end
+
   describe "GET #index" do
     include_examples :index_examples
   end

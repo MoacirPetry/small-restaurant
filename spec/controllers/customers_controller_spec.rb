@@ -9,19 +9,16 @@ RSpec.describe CustomersController, type: :controller do
     @invalid_customer =  FactoryBot.attributes_for(:invalid_customer)
   end
 
+  context "Check current_user" do
+    include_examples :current_user_examples
+  end
+
   context "GET #index" do
     include_examples :index_examples
   end
 
   context 'GET #new' do
     include_examples :new_examples
-  end
-
-  context 'Checking current_user' do
-    it "should have a current_user" do
-      # note the fact that you should remove the "validate_session" parameter if this was a scaffold-generated controller
-      expect(subject.current_user).to_not eq(nil)
-    end
   end
 
   describe "POST #create" do

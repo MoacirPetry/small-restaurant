@@ -7,6 +7,10 @@ RSpec.describe HomepageController, type: :controller do
     sign_in FactoryBot.create(:user) # Using factory bot as an example
   end
 
+  context "Check current_user" do
+    include_examples :current_user_examples
+  end
+
   describe "GET #index" do
     include_examples :index_examples
   end
