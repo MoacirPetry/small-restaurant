@@ -6,4 +6,7 @@ FactoryBot.define do
     user
     table
   end
+  factory :invalid_order, class: Order do
+    user { nil }
+  end
 end
