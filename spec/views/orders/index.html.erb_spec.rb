@@ -12,14 +12,9 @@ RSpec.describe "orders/index.html.erb", type: :view do
       visit orders_path
       expect(page).to have_content('List of Orders')
     end
-  end
-
-  context 'NEW ORDER' do
-    it "filling fields..." do
+    it "new customer" do
       visit orders_path
-      click_on('New Order')
       expect(page).to have_content('New Order')
     end
   end
-
 end

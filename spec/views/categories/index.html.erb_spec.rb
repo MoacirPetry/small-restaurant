@@ -14,12 +14,8 @@ RSpec.describe "categories/index", type: :view do
       visit categories_path
       expect(page).to have_content('List of Categories')
     end
-  end
-
-  context 'NEW CATEGORY' do
-    it "filling fields..." do
+    it "new category" do
       visit categories_path
-      click_on('New Category')
       expect(page).to have_content('New Category')
     end
   end
