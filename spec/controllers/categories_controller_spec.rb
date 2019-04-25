@@ -22,16 +22,16 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe "POST #create" do
-    context "with valid attributes" do
-      # it "creates category" do
-      #   categories_params = FactoryBot.attributes_for(:category)
-      #   expect { post :create, params: { :category => categories_params } }.to change(Category, :count).by(1)
-      # end
-      # it "redirects to the index categories page" do
-      #   post :create, params: { category: FactoryBot.attributes_for(:category) }
-      #   expect(response).to redirect_to categories_path
-      # end
-    end
+    # context "with valid attributes" do
+    #   it "creates category" do
+    #     categories_params = FactoryBot.attributes_for(:category)
+    #     expect { post :create, params: { :category => categories_params } }.to change(Category, :count).by(1)
+    #   end
+    #   it "redirects to the index categories page" do
+    #     post :create, params: { category: FactoryBot.attributes_for(:category) }
+    #     expect(response).to redirect_to categories_path
+    #   end
+    # end
 
     context "with invalid attributes" do
       it "does not save the new category" do

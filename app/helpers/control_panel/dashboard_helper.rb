@@ -1,2 +1,0 @@
-module ControlPanel::DashboardHelper
-end
