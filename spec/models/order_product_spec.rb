@@ -10,8 +10,12 @@ RSpec.describe OrderProduct, type: :model do
   end
 
   context 'Validates fields' do
-    it { is_expected.to validate_presence_of(:order) }
-    it { is_expected.to validate_presence_of(:product) }
+    it "order?" do
+      is_expected.to validate_presence_of(:order)
+    end
+    it "product?" do
+      is_expected.to validate_presence_of(:product)
+    end
   end
 
   context 'Associations' do
