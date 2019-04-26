@@ -14,4 +14,11 @@ RSpec.describe OrderProduct, type: :model do
     it { is_expected.to validate_presence_of(:product) }
   end
 
+  context 'Associations' do
+    it "belong_to?" do
+      is_expected.to belong_to(:order)
+      is_expected.to belong_to(:product)
+    end
+  end
+
 end

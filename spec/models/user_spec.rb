@@ -18,4 +18,11 @@ RSpec.describe User, type: :model do
       expect(users.size).to eql(size_old +1)
     end
   end
+
+  context "Associations" do
+    it "have_many?" do
+      is_expected.to have_many(:orders)#have_many(shoulda-matchers) has_many(rails)
+    end
+  end
+
 end

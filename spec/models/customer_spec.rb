@@ -15,4 +15,10 @@ RSpec.describe Customer, type: :model do
     it { is_expected.to validate_presence_of(:phone_number) }
   end
 
+  context "Associations" do
+    it "has_one?" do
+      is_expected.to have_one(:order)#have_one(shoulda-matchers) has_one(rails)
+    end
+  end
+
 end
