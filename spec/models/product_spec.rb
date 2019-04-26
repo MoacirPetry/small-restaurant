@@ -16,7 +16,9 @@ RSpec.describe Product, type: :model do
   end
 
   context 'Associations' do
-    it { is_expected.to belong_to(:category) }
+    it "category?" do
+      is_expected.to belong_to(:category)
+    end
   end
 
 end

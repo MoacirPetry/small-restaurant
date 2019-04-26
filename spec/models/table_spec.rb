@@ -11,7 +11,9 @@ RSpec.describe Table, type: :model do
 
   context 'Validates fields' do
     #it { is_expected.to validate_presence_of(:status) }
-    it { is_expected.to validate_presence_of(:limit) }
+    it "limit?" do
+      is_expected.to validate_presence_of(:limit)
+    end
   end
 
 end

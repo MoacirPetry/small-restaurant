@@ -10,7 +10,11 @@ RSpec.describe Category, type: :model do
   end
 
   context 'Validates fields' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:description) }
+    it "name?" do
+      is_expected.to validate_presence_of(:name)
+    end
+    it "description?" do
+      is_expected.to validate_presence_of(:description)
+    end
   end
 end

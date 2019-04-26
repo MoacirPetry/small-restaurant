@@ -10,9 +10,15 @@ RSpec.describe Order, type: :model do
   end
 
   context 'Validates fields' do
-    it { is_expected.to validate_presence_of(:customer) }
-    it { is_expected.to validate_presence_of(:user) }
-    it { is_expected.to validate_presence_of(:table) }
+    it "customer?" do
+      is_expected.to validate_presence_of(:customer)
+    end
+    it "user?" do
+      is_expected.to validate_presence_of(:user)
+    end
+    it "table?" do
+      is_expected.to validate_presence_of(:table)
+    end
   end
 
 end
