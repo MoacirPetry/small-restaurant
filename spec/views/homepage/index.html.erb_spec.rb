@@ -15,7 +15,7 @@ RSpec.describe "GET Homepage links", type: :view do
     login_as(user, :scope => :user)
   end
 
-  describe "homepage" do
+  context "homepage" do
     it "#index" do
       homepage
       expect(response).to render_template(:index)
@@ -26,7 +26,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "orders" do
+  context "orders" do
     it "#index" do
       orders
       expect(response).to render_template(:index)
@@ -37,7 +37,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "tables" do
+  context "tables" do
     it "#index" do
       tables
       expect(response).to render_template(:index)
@@ -48,7 +48,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "categories" do
+  context "categories" do
     it "#index" do
       categories
       expect(response).to render_template(:index)
@@ -59,7 +59,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "products" do
+  context "products" do
     it "#index" do
       products
       expect(response).to render_template(:index)
@@ -70,7 +70,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "customers" do
+  context "customers" do
     it "#index" do
       customers
       expect(response).to render_template(:index)
@@ -81,7 +81,7 @@ RSpec.describe "GET Homepage links", type: :view do
     end
   end
 
-  describe "user" do
+  context "user" do
     it "#edit" do
       user
       expect(response).to render_template(:edit)
