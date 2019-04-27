@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "GET Homepage links", type: :view do
 
+  let(:homepage) { visit root_path }
   let(:orders) { visit orders_path }
   let(:tables) { visit tables_path }
   let(:categories) { visit categories_path }
@@ -12,6 +13,17 @@ RSpec.describe "GET Homepage links", type: :view do
   before(:each) do
     user = FactoryBot.create(:user)
     login_as(user, :scope => :user)
+  end
+
+  describe "homepage" do
+    it "#index" do
+      homepage
+      expect(response).to render_template(:index)
+    end
+    it "path" do
+      homepage
+      expect(page.current_path).to eq '/'
+    end
   end
 
   describe "orders" do
