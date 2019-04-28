@@ -7,11 +7,26 @@ RSpec.describe "customers/new", type: :view do
     login_as(user, :scope => :user)
   end
 
-  context 'GET #new' do
-    it "expect #new" do
-      visit customers_path
-      # click_on('New Customer')
-      expect(page).to have_content('New Customer')
+  context "when create" do
+    it "valid?" do
+      visit new_customer_path
+      #find('form', :visible => false).click do
+      # within('.btn', :disabled => all) do
+      fill_in 'Name', :with => Faker::Lorem.word
+      fill_in 'Email', :with => Faker::Internet.email
+      fill_in 'Phone Number', :with => Faker::PhoneNumber.phone_number
+      # end
+      #find(:xpath, "//input[contains(@name, 'commit')]").click()
+      click_button 'Apply'
+      expect(page).to have_content 'registered'
+    end
+  end
+
+  context 'when prohibited' do
+    it "!create?" do
+      visit new_customer_path
+      find(:xpath, "//input[contains(@name, 'commit')]").click()
+      expect(page).to have_content('prohibited ')
     end
   end
 

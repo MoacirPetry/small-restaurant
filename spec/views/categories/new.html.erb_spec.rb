@@ -9,22 +9,22 @@ RSpec.describe "categories/new", type: :view do
     login_as(user, :scope => :user)
   end
 
-  context "Test New Category" do
-    it "Create a new category" do
+  context "when create" do
+    it "valid?" do
       visit new_category_path
       #find('form', :visible => false).click do
       # within('.btn', :disabled => all) do
-      fill_in 'Name', :with => FFaker::Lorem.word
-      fill_in 'Description', :with => FFaker::Lorem.phrase
+      fill_in 'Name', :with => Faker::Lorem.word
+      fill_in 'Description', :with => Faker::Lorem.sentence
       # end
       #find(:xpath, "//input[contains(@name, 'commit')]").click()
-      click_button 'Create'
+      click_button 'Apply'
       expect(page).to have_content 'registered'
     end
   end
 
-  context 'pro' do
-    it "dont permit Create a new category" do
+  context 'when prohibited' do
+    it "!create?" do
       visit new_category_path
       find(:xpath, "//input[contains(@name, 'commit')]").click()
       expect(page).to have_content('prohibited ')
