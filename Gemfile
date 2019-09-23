@@ -8,7 +8,7 @@ end
 ### Custom Gems ###
 
 # Devise for auth
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 
 # Bootstrap for CSS framework
 gem 'bootstrap', '~> 4.3.1'
