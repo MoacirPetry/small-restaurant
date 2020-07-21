@@ -10,8 +10,8 @@ namespace :table do
   task create: :environment do
 		if (ARGV.size == 2) && (ENV['n'] != "")
 	  	ENV['n'].to_i.times do |i|
-				status = Faker::Boolean.boolean(0)
-				limit = Faker::Number.within(2..20)
+				status = false
+				limit = rand(2..20)
 				table = "Table #{i} = limit #{limit} | status #{status}"
 				puts "Registering... -> #{table}"
 				Table.create(status: status, limit: limit)

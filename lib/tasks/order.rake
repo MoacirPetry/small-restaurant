@@ -11,7 +11,7 @@ namespace :order do
 		if (ARGV.size == 2) && (ENV['n'] != "")
 	  	ENV['n'].to_i.times do |i|
 				status = false
-				total = Faker::Number.within(0..0)
+				total = 0
         user = User.all.sample
         customer = Customer.all.sample
         table = Table.all.sample
