@@ -10,17 +10,17 @@ RSpec.describe Category, type: :model do
   end
 
   context 'Validates fields' do
-    it "name?" do
+    it 'name?' do
       is_expected.to validate_presence_of(:name)
     end
-    it "description?" do
+    it 'description?' do
       is_expected.to validate_presence_of(:description)
     end
   end
 
-  context "Associations" do
-    it "has_one?" do
-      is_expected.to have_one(:product)#have_one(shoulda-matchers) has_one(rails)
+  context 'Associations' do
+    it 'has_one?' do
+      is_expected.to have_one(:product)
     end
   end
 
