@@ -10,28 +10,28 @@ RSpec.describe Order, type: :model do
   end
 
   context 'Validates fields' do
-    it "customer?" do
+    it 'customer?' do
       is_expected.to validate_presence_of(:customer)
     end
-    it "user?" do
+    it 'user?' do
       is_expected.to validate_presence_of(:user)
     end
-    it "table?" do
+    it 'table?' do
       is_expected.to validate_presence_of(:table)
     end
   end
 
   context 'Associations' do
-    it "belong_to?" do
+    it 'belong_to?' do
       is_expected.to belong_to(:customer)
       is_expected.to belong_to(:user)
       is_expected.to belong_to(:table)
     end
-    it "has_many?" do
-      is_expected.to have_many(:order_products)#have_many(shoulda-matchers) has_many(rails)
+    it 'has_many?' do
+      is_expected.to have_many(:order_products)
     end
-    it "accepts_nested_attributes_for?" do
-      is_expected.to accept_nested_attributes_for(:order_products)#accept_nested_attributes_for(shoulda-matchers) accepts_nested_attributes_for(rails)
+    it 'accepts_nested_attributes_for?' do
+      is_expected.to accept_nested_attributes_for(:order_products)
     end
   end
 
