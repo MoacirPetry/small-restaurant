@@ -13,17 +13,17 @@ RSpec.describe Customer, type: :model do
     it "name?" do
       is_expected.to validate_presence_of(:name)
     end
-    it "description?" do
+    it 'description?' do
       is_expected.to validate_presence_of(:email)
     end
-    it "phone_number?" do
+    it 'phone_number?' do
       is_expected.to validate_presence_of(:phone_number)
     end
   end
 
-  context "Associations" do
-    it "has_one?" do
-      is_expected.to have_one(:order)#have_one(shoulda-matchers) has_one(rails)
+  context 'Associations' do
+    it 'has_one?' do
+      is_expected.to have_one(:order)
     end
   end
 
