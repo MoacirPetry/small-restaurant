@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/06d57f5a0eeee654ffff/maintainability)](https://codeclimate.com/github/MoacirPetry/small-restaurant/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/06d57f5a0eeee654ffff/test_coverage)](https://codeclimate.com/github/MoacirPetry/small-restaurant/test_coverage)
 
 ## :fork_and_knife: Small Restaurant :fork_and_knife:
 

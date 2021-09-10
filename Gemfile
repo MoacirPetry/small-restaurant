@@ -72,6 +72,7 @@ group :development, :test do
   gem "factory_bot_rails"
   # Should Matchers for tests with Rspec
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', '~> 0.21.2', require: false
 end
 
 group :development do
