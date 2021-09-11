@@ -12,6 +12,6 @@ before_script:
   - bundle exec bundle install --jobs=6 --retry=3
 script:
   - bundle exec rake db:create db:schema:load
-  - bundle exec rake spec
+  - bundle exec rspec spec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
