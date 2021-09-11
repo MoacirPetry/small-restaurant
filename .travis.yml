@@ -3,6 +3,8 @@ rvm:
   - 2.5.8
 cache:
   - bundler
+env:
+  - TESTFOLDER=spec
 services:
   - postgresql
 before_script:
@@ -10,4 +12,4 @@ before_script:
 script:
   — bundle exec rake db:create
   — bundle exec rake db:schema:load
-  — bundle exec rspec
+  — "bundle exec rspec $TESTFOLDER"
