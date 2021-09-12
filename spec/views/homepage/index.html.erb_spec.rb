@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "GET Homepage links", type: :view do
+RSpec.describe 'GET Homepage links', type: :view do
 
   let(:homepage) { visit root_path }
   let(:orders) { visit orders_path }
@@ -15,78 +15,78 @@ RSpec.describe "GET Homepage links", type: :view do
     login_as(user, :scope => :user)
   end
 
-  context "homepage" do
-    it "#index" do
+  context 'homepage' do
+    it '#index' do
       homepage
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       homepage
       expect(page.current_path).to eq '/'
     end
   end
 
-  context "orders" do
-    it "#index" do
+  context 'orders' do
+    it '#index' do
       orders
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       orders
       expect(page.current_path).to eq '/orders'
     end
   end
 
-  context "tables" do
-    it "#index" do
+  context 'tables' do
+    it '#index' do
       tables
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       tables
       expect(page.current_path).to eq '/tables'
     end
   end
 
-  context "categories" do
-    it "#index" do
+  context 'categories' do
+    it '#index' do
       categories
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       categories
       expect(page.current_path).to eq '/categories'
     end
   end
 
-  context "products" do
-    it "#index" do
+  context 'products' do
+    it '#index' do
       products
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       products
       expect(page.current_path).to eq '/products'
     end
   end
 
-  context "customers" do
-    it "#index" do
+  context 'customers' do
+    it '#index' do
       customers
       expect(response).to render_template(:index)
     end
-    it "path" do
+    it 'path' do
       customers
       expect(page.current_path).to eq '/customers'
     end
   end
 
-  context "user" do
-    it "#edit" do
+  context 'user' do
+    it '#edit' do
       user
       expect(response).to render_template(:edit)
     end
-    it "path" do
+    it 'path' do
       user
       expect(page.current_path).to eq '/users/edit'
     end
