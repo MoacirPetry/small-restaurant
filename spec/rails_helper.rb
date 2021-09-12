@@ -1,6 +1,6 @@
 require 'simplecov'
-SimpleCov.command_name 'spawn'
-SimpleCov.at_fork.call(Process.pid)
+# SimpleCov.command_name 'spawn'
+# SimpleCov.at_fork.call(Process.pid)
 SimpleCov.start 'rails'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
