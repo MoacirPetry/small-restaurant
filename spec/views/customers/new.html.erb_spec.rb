@@ -12,9 +12,9 @@ RSpec.describe "customers/new", type: :view do
       visit new_customer_path
       #find('form', :visible => false).click do
       # within('.btn', :disabled => all) do
-      fill_in 'Name', :with => Faker::Lorem.word
-      fill_in 'Email', :with => Faker::Internet.email
-      fill_in 'Phone Number', :with => Faker::PhoneNumber.phone_number
+      fill_in 'Name', with: Faker::Name.name
+      fill_in 'Email', with: Faker::Internet.email
+      fill_in 'Phone Number', with: Faker::Number.number(digits: 10)
       # end
       #find(:xpath, "//input[contains(@name, 'commit')]").click()
       click_button 'Apply'
