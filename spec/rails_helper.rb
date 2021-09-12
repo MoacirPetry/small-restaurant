@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.command_name 'spawn'
+SimpleCov.at_fork.call(Process.pid)
+SimpleCov.start 'rails'
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -6,8 +11,6 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'simplecov'
-SimpleCov.start
 
 # Capybara
 require 'capybara/rails'
@@ -57,6 +60,9 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  # FactoryBot configuration
+  config.include FactoryBot::Syntax::Methods
 
   # Devise configuration
   config.include Devise::Test::ControllerHelpers, type: :controller
