@@ -6,6 +6,11 @@ FactoryBot.define do
     user
     table
   end
+  trait :with_products do
+    after(:create) do |order|
+      create_list(:order_product, 3, order: order)
+    end
+  end
   factory :invalid_order, class: Order do
     user { nil }
   end
