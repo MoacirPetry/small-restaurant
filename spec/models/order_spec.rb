@@ -35,4 +35,19 @@ RSpec.describe Order, type: :model do
     end
   end
 
+  describe 'total_order' do
+    context 'given an empty order' do
+      it 'returns 0' do
+        order = create(:order)
+        expect(order.total_order(order)).to eq(0)
+      end
+    end
+    context 'given products' do
+      it 'returns total' do
+        order = create(:order, :with_products)
+        response = order.total
+        expect(response).not_to eq(0)
+      end
+    end
+  end
 end

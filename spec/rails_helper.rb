@@ -1,7 +1,11 @@
 require 'simplecov'
-# SimpleCov.command_name 'spawn'
-# SimpleCov.at_fork.call(Process.pid)
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter '/app/mailers/'
+  add_filter '/app/controllers/control_panel_controller.rb'
+  add_filter '/app/controllers/control_panel/'
+end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
