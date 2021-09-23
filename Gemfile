@@ -29,9 +29,6 @@ gem 'cocoon'
 # Ransack for search
 gem 'ransack'
 
-# Faker for generate faker values - efective!
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2', '>= 5.2.4.6'
 # Use postgresql as the database for Active Record
@@ -64,6 +61,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  # Faker for generate faker values - efective!
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem 'selenium-webdriver'
   # Rspec for tests
   gem 'rspec-rails', '~> 3.8'
