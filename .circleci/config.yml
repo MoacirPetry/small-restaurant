@@ -13,9 +13,14 @@ executors:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
           PG_HOST: 127.0.0.1
-      - image: cimg/postgres:14.4.0
-        environment:
-          POSTGRES_DB: small-restaurant_test
+      - image: cimg/postgres:14.0
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+        environment: # add POSTGRES environment variables.
+          POSTGRES_USER: postgres
+          POSTGRES_DB: small_restaurant_test
+          POSTGRES_PASSWORD: "postgres"
 
 commands:
   configure_bundler:
