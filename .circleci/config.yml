@@ -13,7 +13,7 @@ executors:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
           PG_HOST: 127.0.0.1
-      - image: circleci/postgres:10.20
+      - image: cimg/postgres:14.4.0
         environment:
           POSTGRES_DB: small-restaurant_test
 
