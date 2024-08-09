@@ -7,6 +7,9 @@ end
 
 ### Custom Gems ###
 
+# Auditing
+gem 'bundler-audit', require: false
+
 # Devise for auth
 gem 'devise', '>= 4.7.1'
 
@@ -62,7 +65,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   # Faker for generate faker values - efective!
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'faker'
   gem 'selenium-webdriver'
   # Rspec for tests
   gem 'rspec-rails', '~> 3.8'
