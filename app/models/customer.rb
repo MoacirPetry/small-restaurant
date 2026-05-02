@@ -3,6 +3,10 @@ class Customer < ApplicationRecord
   # Associations
   has_one :order
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at email id name phone_number updated_at]
+  end
+
   # Validates
   validates :name, :email, :phone_number, presence: true, uniqueness: true
   validates :name, length: { maximum: 30, too_long: "-> %{count} characters is the maximum allowed", minimum: 2, too_short: "-> %{count} characters is the minimum allowed" }

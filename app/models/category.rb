@@ -3,6 +3,10 @@ class Category < ApplicationRecord
   # Associations
   has_one :product
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at description id name updated_at]
+  end
+
   # Validates
   validates :name, presence: true, uniqueness: true, length: { maximum: 30, too_long: "-> %{count} characters is the maximum allowed", minimum: 2, too_short: "-> %{count} characters is the minimum allowed" }
   validates :description, presence: true, length: { maximum: 500, too_long: "-> %{count} characters is the maximum allowed", minimum: 10, too_short: "-> %{count} characters is the minimum allowed" }

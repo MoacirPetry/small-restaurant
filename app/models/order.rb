@@ -10,6 +10,14 @@ class Order < ApplicationRecord
   # Nested attributes
   accepts_nested_attributes_for :order_products, allow_destroy: true
 
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at customer_id id status table_id total updated_at user_id]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[customer table user]
+  end
+
   # Validates
   validates :user, :customer, :table, presence: true
 
